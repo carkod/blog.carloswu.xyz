@@ -78,8 +78,6 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
-define('WP_HOME','https://carkod-dev-carkod.c9users.io/');
-define('WP_SITEURL','https://carkod-dev-carkod.c9users.io/');
 
 /* That's all, stop editing! Happy blogging. */
 
