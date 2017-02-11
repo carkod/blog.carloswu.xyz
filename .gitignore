@@ -1,6 +1,0 @@
-.* !/.gitignore
-wp-config.php
-.sass-cache/
-*.css.map
-*.scss
-*.sass
