@@ -1,0 +1,415 @@
+/*!
+Theme Name: Overlap
+Theme URI: http://carloswu.xyz/projects
+Description: 2016 design + upgrade
+Version: 5.0.3
+Author: Carlos Wu
+Author URI: http://carkod.com
+Tags: 
+Text Domain: overlap
+*/
+
+
+// Core variables and mixins
+@import "bootstrap-variables";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap/normalize";
+
+// Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+
+// Components
+@import "bootstrap/component-animations";
+@import "bootstrap/dropdowns";
+@import "bootstrap/button-groups";
+@import "bootstrap/input-groups";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+@import "bootstrap/breadcrumbs";
+@import "bootstrap/pagination";
+@import "bootstrap/pager";
+@import "bootstrap/labels";
+@import "bootstrap/badges";
+@import "bootstrap/jumbotron";
+@import "bootstrap/thumbnails";
+@import "bootstrap/alerts";
+@import "bootstrap/progress-bars";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/panels";
+@import "bootstrap/responsive-embed";
+@import "bootstrap/close";
+
+// Components w/ JavaScript
+@import "bootstrap/modals";
+@import "bootstrap/tooltip";
+@import "bootstrap/popovers";
+
+// Utility classes
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+
+@font-face {
+	font-family: 'Gothic';
+	src: url('fonts/gothic.eot');
+	src: local('Gothic'), url('fonts/gothic.woff') format('woff'), url('fonts/gothic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Gothic Bold';
+	src: url('fonts/gothic-bold.eot');
+	src: local('Gothic'), url('fonts/gothic.woff') format('woff'), url('fonts/gothic-bold.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_9785">Text with this font applied</p> */
+
+
+/* General styling */
+
+p {
+    font-weight:100;
+}
+
+input {
+    outline:none;
+}
+
+
+/* Container styling */
+
+#content {
+    position:relative;
+    z-index:2;
+    left:0;
+    top:0;
+}
+
+
+
+#header {
+    background-repeat:no-repeat;
+    background-size:cover;
+    position:relative;
+    z-index:1;
+    
+    #header-center {
+        margin:0 auto;
+        padding-top:2%; /*change for sm and lg*/
+        max-width:800px;
+        width:100%;
+    }
+    
+    #site-title-bg {
+        background-color:$brand-primary;
+        position:relative;
+        display:table;
+        left:27%; /*change for sm and lg (centering)*/
+    }
+    
+    #nav {
+        margin-top:2%; /*change for sm and lg (vertical centering)*/
+        
+        .nav-focus { 
+        -webkit-box-shadow: 0 0 3px $brand-primary,0 1px 0 rgba(0,0,0,.07) inset;
+        -moz-box-shadow: 0 0 3px $brand-primary,0 1px 0 rgba(0,0,0,.07) inset;
+        box-shadow: 0 0 3px #000,0 1px 0 rgba(0,0,0,.07) inset;
+        border-radius:$border-radius-base;
+        background-color:#fff;
+        
+            #bar-btn {
+                border-top:1px solid $brand-secondary;
+                border-bottom:1px solid $brand-secondary;
+                border-left:1px solid $brand-secondary;
+            }
+            #search-btn {
+                border-top:1px solid $brand-secondary;
+                border-bottom:1px solid $brand-secondary;
+                border-right:1px solid $brand-secondary;
+            }
+            #search-field {
+                border-top:1px solid $brand-secondary;
+                border-bottom:1px solid $brand-secondary;
+            }
+        
+        }
+        
+    }
+    
+    #site-title {
+        
+        margin:0;
+        position:relative;
+        right:36px; /*change for sm and lg (logo positioning)*/
+        width:355px; /*change for sm and lg (logo positioning) */
+        
+            a {
+                font-family: 'Gothic Bold', Arial, Helvetica, sans-serif;
+                font-weight:bold;
+                font-size:100px;
+                color:#fff;
+                text-transform:uppercase;
+                text-decoration:none;
+                position:relative;
+                left:0;
+            }
+    }
+    
+    #site-description {
+        display: block;
+        text-align: center;
+        clear:both;
+        
+        h2 {
+        
+        font-family: 'Hind', Arial, Helvetica, sans-serif;
+        font-weight:700;
+        font-style:italic;
+        font-size:48px;
+        color:#fff;
+        text-shadow: -2px 0 0 #000, 2px 0px 0 #000, 0px 2px 0 #000,0px -2px 0 #000;
+        }
+        
+    }
+}
+
+.autocomplete {
+
+    margin-top: 4em;
+    margin-bottom: 2em;
+    
+    .entry {
+    color:$gray;
+    text-decoration:none;
+    font-size:1em;
+    font-weight:400;
+    display:block;
+    border-top:5px solid #fff;
+    
+    }
+    
+    .entry:active, .entry:hover {
+        text-decoration:none;
+        border-top:5px solid $brand-primary;
+    }
+    
+    .entry:focus {
+    background-color:#ccc914;
+    background-color: #fff;
+    color: #aeaeae;
+    font-weight:normal;
+    }
+    
+    .selected {
+        background-color:$gray-lighter;
+    }
+    
+}
+
+#search-form {
+    .form-control {
+        height:46px;
+        border:none;
+        -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+    }
+   
+}
+
+
+
+#main {
+    
+    margin:0 auto;
+    width:80%;
+    
+    #results-page {
+        z-index:0;
+        
+        
+        
+        a {
+            display:block;
+            word-wrap:break-word;
+            max-width:100%;
+        }
+        
+    }
+    .bounceInDow {
+        -webkit-animation-name: bounceInDow;
+        animation-name: bounceInDow;
+        -webkit-animation-duration: 5s;
+        animation-duration: 5s;
+        }
+    
+    
+    
+    
+// Alternative
+
+
+    #alternative {
+        
+        #alternative-menu {
+            margin:20px 0;
+        }
+        
+            .in.active {
+                z-index:1;
+            }
+            
+            .alternative-btn {
+            font-size: 1.5em;
+            text-transform: uppercase;
+            font-weight:400;
+            }
+            
+            .alternative-btn:hover, .alternative-btn:active, .alternative-btn:visited {
+                // reseter
+                color:#555555;
+                background:#fff;
+            }
+            
+            // Special panel arrangement for topics
+            
+            #topix {
+                display:table;
+            }
+            
+            #topix .items {
+                display:inline; // lt IE8 fix
+                display:inline-block;
+                float:none;
+                vertical-align:top;
+            }
+        #alternative-cont {
+            position:relative;
+            
+            .tab-pane {
+                position:absolute;
+            }
+        }
+    }
+    
+    .archives {
+        a {
+            padding:9px;
+            font-size: 1em;
+            text-transform: uppercase;
+            text-indent:1em;
+            font-family: 'Hind', Arial, Helvetica, sans-serif;
+            color: $brand-primary;            
+            display:block;
+            text-decoration:none;
+        }
+        
+        a:hover {
+            background-color:$brand-primary;
+            color:#fff;
+        }
+    
+    
+    }
+  
+  
+  .post-data {
+        ul.postmeta {
+            padding:0 ;
+            .no-hover {
+                    background:inherit;
+                    color:inherit;
+                }
+            li:hover, li:active {
+                
+                a {
+                    text-decoration:none;
+                    color:$brand-primary;
+                }
+                background:white;
+                border:$gray;
+                                
+            }
+        }
+    }  
+
+}
+
+// sidebar
+
+#sidebar {
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    max-width:25%;
+    min-width:200px;
+    height:auto;
+    z-index:10;
+    background:#fff;
+    text-transform:uppercase;
+    padding:$padding-large-vertical $padding-large-horizontal;
+    
+    
+    .close-bar {
+        position:absolute;
+        width:50px;
+        height:50px;
+    }
+    
+    
+    a {
+        display:block;
+        padding:$padding-large-vertical $padding-large-horizontal;
+        }
+
+    .list-items a {
+        border-bottom:1px solid $gray-lighter;
+    }
+    .list-items a:hover, .list-items a:active {
+        text-decoration:none;
+    }
+    
+    .title {
+        border-bottom:3px solid $brand-primary;
+        font-weight:700;
+        font-size:1.3em;
+        margin-top:$padding-large-vertical;
+                
+        ul {
+        margin:0;
+        
+        
+        }
+        
+    .title:hover, .title:active {
+        text-decoration:none;
+    }
+        
+    
+        
+    }
+    
+    ul {
+        list-style:none;
+        margin:0;
+        padding:0;
+        ul {
+            margin:0;
+            padding:0;
+        }
+    }
+    
+    #sidebar-menu {
+        
+        
+    }
+}
